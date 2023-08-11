@@ -18,6 +18,10 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation include(fabricApi.module('fabric-api-base', project.fabric_version))
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+
+    testImplementation "io.kotest:kotest-runner-junit5:$kotest_version"
+    testImplementation "io.kotest:kotest-assertions-core:$kotest_version"
+    testImplementation "io.kotest:kotest-property:$kotest_version"
 }
 
 processResources {
@@ -84,4 +88,8 @@ publishing {
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
     }
+}
+
+test {
+    useJUnitPlatform()
 }
