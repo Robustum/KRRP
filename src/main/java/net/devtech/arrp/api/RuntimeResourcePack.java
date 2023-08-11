@@ -122,13 +122,6 @@ public interface RuntimeResourcePack extends ResourcePack {
 			CallableFunction<String, byte[]> data);
 
 	/**
-	 * add a root resource that is lazily evaluated.
-	 *
-	 * A root resource is something like pack.png, pack.mcmeta, etc. By default ARRP generates a default mcmeta
-	 */
-	void addLazyRootResource(String path, BiFunction<RuntimeResourcePack, String, byte[]> data);
-
-	/**
 	 * add a raw resource to the root path
 	 *
 	 * A root resource is something like pack.png, pack.mcmeta, etc. By default ARRP generates a default mcmeta
